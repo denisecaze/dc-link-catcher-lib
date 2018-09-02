@@ -1,0 +1,32 @@
+{
+  "name": "dc-link-catcher-lib",
+  "version": "1.0.0",
+  "description": "A library to catch url links from markdown files",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisecaze/link-catcher.git"
+  },
+  "keywords": [
+    "markdown",
+    "link"
+  ],
+  "author": "Denise Cazé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisecaze/dc-link-catcher-lib/issues"
+  },
+  "homepage": "https://github.com/denisecaze/dc-link-catcher-lib#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "lodash": "^4.17.10",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1"
+  }
+}
