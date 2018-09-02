@@ -14,7 +14,7 @@ exports.getLinksFromMd = text =>  {
   
   if (typeof text === "string") { // NÃO ESTÁ COBERTO PELO NYC
     var result = [];
-    const regExpUrl = new RegExp(/(https?:\/\/)?(www\.)?[a-z0-9]+(\.\w{2,3}){1,2}/g);
+    const regExpUrl = new RegExp(/(https?:\/\/)?(www\.)?[a-z0-9]+(\.\w{2,3}){1,2}((\/\w+)?){1,}/g);
     const regExpMarkDown = new RegExp(/(?<=\[).*?(?=\])/g);
     const url = text.match(regExpUrl);
     const markDown = text.match(regExpMarkDown);
@@ -22,7 +22,7 @@ exports.getLinksFromMd = text =>  {
       let obj = { "href": a, "text": b};
       result.push(obj);
     })
-    console.log(result);
+    // console.log(result);
     return url ? result : [];
   }
 }
