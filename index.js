@@ -1,30 +1,27 @@
 const _ = require("lodash");
 
-exports.getLinksFromMd = text =>  {
+exports.getLinksFromMd = text => {
   if (text == null) {
-    throw new Error("Erro: vazio");
+    throw new Error("Erro: parâmetro vazio.");
   }
   if (text === "") {
-    throw new Error("Erro: nenhum parâmetro foi inserido");
+    throw new Error("Erro: o parâmetro não pode ser uma string vazia.");
   } 
 
   if (typeof text === "number") {
-    throw new Error("Erro: números não são válidos");    
+    throw new Error("Erro: números não são válidos.");    
   }
   
-  if (typeof text === "string") { // NÃO ESTÁ COBERTO PELO NYC
-    var result = [];
-    const regExpUrl = new RegExp(/(https?:\/\/)?(www\.)?[a-z0-9]+(\.\w{2,3}){1,2}((\/\w+)?){1,}/g);
-    const regExpMarkDown = new RegExp(/(?<=\[).*?(?=\])/g);
-    const url = text.match(regExpUrl);
-    const markDown = text.match(regExpMarkDown);
+  if (typeof text === "string") {
+    let result = [];
+    let regExpMarkDownUrl = new RegExp(/(https?:\/\/)?(www\.)?[a-z0-9]+(\.\w{2,3}){1,2}((\/\w+)?){1,}/g);
+    let regExpMarkDownText = new RegExp(/(?<=\[).*?(?=\])/g);
+    let url = text.match(regExpMarkDownUrl);
+    let markDown = text.match(regExpMarkDownText);
     _.zipWith(url, markDown, function(a, b) {
       let obj = { "href": a, "text": b};
       result.push(obj);
-    })
-    // console.log(result);
+    });
     return url ? result : [];
   }
-}
-
-// getLinksFromMd("temos dois markdowns e dois links: [google] (http://www.google.com), [youtube] (www.youtube.com.br/videos");
+};
