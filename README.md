@@ -21,9 +21,6 @@ $ node
 > //[ {href: "www.google.com", text: "google"} ]
 ```
 
-## Appearance
-![App map](./images/link-catcher.png)
-
 ## Technology Stack
 + HTML5
 + CSS3
