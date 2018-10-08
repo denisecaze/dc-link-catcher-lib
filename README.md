@@ -1,31 +1,43 @@
 # Link Catcher
-Biblioteca destinada a filtrar links em linguagem *markdown*
+A library designed to filter links in markdown language.
 
-## Instalação
-+ Requer Node.js, NPM e Lodash. Caso não possua, acesse: 
+## Motivation
+This was the final project of the fourth sprint of Laboratoria bootcamp. The challenge was to create an npm library to capture links in markdown language using Regex. In addition, using Mocha, Chai and NYC to perform unit tests.
+
+## Installation
++ Requires Node.js, NPM and Lodash. If you do not have it, go to:
 	1. [Node + NPM](https://nodejs.org/en/download/);
 	2. [Lodash](https://lodash.com/);
-+ Utilize o terminal e insira, de preferência na pasta onde quer utilizar a biblioteca:
++ In the terminal, go to the folder where you want to use the library and then type:
 ```
 $ npm install dc-link-catcher-lib
 ```
 
-## Uso
+## Use
 ```
 $ node
 > const library = require("dc-link-catcher-lib")
-> library.getLinksFromMd("este é o link do [google] (www.google.com)") 
+> library.getLinksFromMd("this is Google's link: [google](www.google.com)") 
 > //[ {href: "www.google.com", text: "google"} ]
 ```
 
-## Roadmap oficial
+## Appearance
+![App map](./images/link-catcher.png)
 
-#### versão 3.0.0 (prevista para dezembro/2018)
-+ Transcrição do README para inglês e espanhol
+## Technology Stack
++ HTML5
++ CSS3
++ JavaScript 
++ NPM
++ Mocha
++ Chai
++ NYC
++ Lodash
 
-#### versão 2.0.0 (prevista para novembro/2018)
-+ Implementação de reconhecimento de URL's mais complexos, englobando, além do protocolo, domínio e caminhos da versão 1.0.0: porta, recurso, query_string e fragmento
+## Oficial Roadmap
 
-#### versão 1.0.0 (released)
-+ Extrai links em *markdown*
-+ É capaz de reconhecer links que, além do domínio, possuam ou não protocolo (http://, https://) e caminho (/path)
+#### version 2.0.0 (scheduled for November 2018)
++ Implementation of recognition of more complex URLs: with protocol, domain, paths, resource, query_string and fragment.
+
+#### version 1.0.0 (released)
++ Can capture links and titles and save it in an object. These links could have or not have a protocol (http://, https://) or a path (/path).
